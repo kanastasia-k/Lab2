@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.mycompany.lab2;
+package AbstractFactory;
 
 /**
  *
@@ -10,17 +10,17 @@ package com.mycompany.lab2;
  */
 public class MordorGearFactory implements OrkGearFactory{
     @Override
-    public String createWeapon(){
-        return "Тяжелый меч";
+    public Weapon createWeapon(){
+        return new MordorWeapon();
     }
     
     @Override
-    public String createArmor() {
-        return "Стальная броня";
+    public Armor createArmor() {
+        return new MordorArmor();
     }
 
     @Override
-    public String createBanner() {
-        return "Знамя с Красным Оком";
+    public Banner createBanner() {
+        return new MordorBanner();
     }
 }

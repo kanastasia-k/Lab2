@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.mycompany.lab2;
+package AbstractFactory;
 
 /**
  *
@@ -10,17 +10,17 @@ package com.mycompany.lab2;
  */
 public class MistyMountainsGearFactory implements OrkGearFactory {
     @Override
-    public String createWeapon() {
-        return "Топор";
+    public Weapon createWeapon() {
+        return new MistyMountainsWeapon();
     }
 
     @Override
-    public String createArmor() {
-        return "Кожаная броня";
+    public Armor createArmor() {
+        return new MistyMountainsArmor();
     }
 
     @Override
-    public String createBanner() {
-        return "Знамя с Луной";
+    public Banner createBanner() {
+        return new MistyMountainsBanner();
     }
 }

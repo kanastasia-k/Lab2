@@ -4,6 +4,9 @@
  */
 package com.mycompany.lab2;
 
+import Builder.*;
+import Builder.OrkBuilder;
+
 /**
  *
  * @author kozhe
@@ -27,7 +30,7 @@ public class OrkDirector {
         orkBuilder.buildWeapon();
         orkBuilder.buildArmor();
         orkBuilder.buildBanner();
-        orkBuilder.buildStrenth();
+        orkBuilder.buildStrength();
         orkBuilder.buildAgility();
         orkBuilder.buildIntelligence();
         orkBuilder.buildHealth();
@@ -42,27 +45,25 @@ public class OrkDirector {
         return ork;
     }
     
-    // Орк-разведчик (высокая ловкость, лук вместо меча)
     public Ork createScoutOrk() {
         Ork ork = createBasicOrk();
         ork.setWeapon("лук");
         ork.setAgility(ork.getAgility() + 30);
-        ork.setHealth(ork.getHealth() - 20); // Меньше здоровья за мобильность
+        ork.setHealth(ork.getHealth() - 20); 
         return ork;
     }
     
-    // Дополнительный метод для кастомной сборки
     public void constructCustomOrk(boolean withBanner, boolean isRanged) {
         orkBuilder.createNewOrk();
         orkBuilder.buildName();
         orkBuilder.buildTribe();
-        orkBuilder.buildStrenth();
+        orkBuilder.buildStrength();
         orkBuilder.buildAgility();
         orkBuilder.buildIntelligence();
         orkBuilder.buildHealth();
         
         if (isRanged) {
-            orkBuilder.buildWeapon("Лук"); // Предполагаем перегруженный метод
+            orkBuilder.buildWeapon("Лук"); 
         } else {
             orkBuilder.buildWeapon();
         }

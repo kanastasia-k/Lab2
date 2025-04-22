@@ -2,17 +2,22 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.mycompany.lab2;
+package Builder;
 import com.github.javafaker.Faker;
+import AbstractFactory.OrkGearFactory;
 
 /**
  *
  * @author kozhe
  */
-abstract class OrkBuilder {
+abstract public class OrkBuilder {
     protected Ork ork;
     protected Faker faker = new Faker();
     protected OrkGearFactory gearFactory;
+    
+    public OrkBuilder() {
+        this.ork = new Ork(); 
+    }
     
     public void setGearFactory(OrkGearFactory gearFactory) {
         this.gearFactory = gearFactory;
@@ -23,7 +28,7 @@ abstract class OrkBuilder {
     
     public abstract void buildName();
     public abstract void buildTribe();
-    public abstract void buildStrenth();
+    public abstract void buildStrength();
     public abstract void buildAgility();
     public abstract void buildIntelligence();
     public abstract void buildHealth();
